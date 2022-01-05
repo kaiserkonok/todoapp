@@ -29,13 +29,13 @@ const showInfo = () => {
 const showTasks = () => {
   tasks.innerHTML = ''
   let ul = document.createElement("ul")
-  allTodo.forEach(todo => {
+  allTodo.forEach((todo, index) => {
     let li = document.createElement("li")
     let button = document.createElement("button")
     button.innerText = "Delete"
     button.className = "btn btn-danger btn-sm float-end"
     button.onclick = deleteTodo
-    li.innerText = todo
+    li.innerText = `${index + 1}. ${todo}`
     li.appendChild(button)
 
     li.className = "list-group-item task"
